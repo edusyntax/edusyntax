@@ -36,10 +36,10 @@ const Footer = () => {
       { name: 'Technical Support', href: '/tech-support' }
     ],
     legal: [
-      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Privacy Policy', href: '/privacy-policy' },
       { name: 'Terms of Service', href: '/terms' },
-      { name: 'Refund Policy', href: '/refund' },
-      { name: 'Cookie Policy', href: '/cookies' }
+      { name: 'Refund Policy', href: '/refund-policy' },
+      
     ]
   };
 
