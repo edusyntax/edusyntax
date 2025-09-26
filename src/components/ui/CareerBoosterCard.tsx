@@ -45,10 +45,10 @@ export default function CareerBoosterCards() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-trust-blue/10 via-white/40 to-success-green/10 relative overflow-hidden">
+    <section className="py-20  relative overflow-hidden">
       {/* Decorative blurred shapes */}
-      <div className="absolute -top-20 -left-20 w-72 h-72 bg-trust-blue/20 rounded-full blur-3xl" />
-      <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-success-green/20 rounded-full blur-3xl" />
+      <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full blur-3xl" />
+      <div className="absolute -bottom-20 -right-20 w-72 h-72 rounded-full blur-3xl" />
 
       <div className="relative container-custom">
         {/* Section Header */}

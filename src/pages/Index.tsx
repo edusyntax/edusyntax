@@ -233,7 +233,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <TestimonialCarousel />
+      {/* <TestimonialCarousel /> */}
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-trust-blue to-primary-orange">

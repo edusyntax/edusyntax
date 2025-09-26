@@ -55,7 +55,7 @@ export default function WhoCanJoin() {
   return (
     <div className="space-y-8">
       <div className="text-center space-y-4">
-        <h2 className="text-3xl lg:text-4xl font-poppins font-bold text-gray-900">
+        <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-gray-900">
           Who Can Join?
         </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -114,26 +114,7 @@ export default function WhoCanJoin() {
         })}
       </div>
 
-      {/* Additional Info */}
-      {/* <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center"
-      >
-        <Card className="max-w-2xl mx-auto bg-gradient-to-br from-trust-blue/10 to-success-green/10 backdrop-blur-xl border border-white/20">
-          <CardContent className="p-8">
-            <h3 className="text-xl font-poppins font-bold text-gray-900 mb-4">
-              No Prerequisites Required!
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Whether you're starting from zero or looking to advance your existing skills, 
-              our comprehensive curriculum will take you from basics to job-ready professional. 
-              All you need is dedication and willingness to learn.
-            </p>
-          </CardContent>
-        </Card>
-      </motion.div> */}
+
     </div>
   );
 }

@@ -75,7 +75,7 @@ export default function InteractiveTracksSelector() {
   };
 
   return (
-    <section className="py-20 bg-white/30 backdrop-blur-xl relative overflow-hidden">
+    <section className=" backdrop-blur-xl relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -93,15 +93,15 @@ export default function InteractiveTracksSelector() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center space-y-6 mb-16"
+          className="text-center space-y-6 mb-12"
         >
           <Badge className="bg-gradient-to-r from-primary-orange to-trust-blue text-white px-6 py-2">
             Choose Your Path
           </Badge>
-          <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-gray-900">
+          <h2 className="text-3xl lg:text-5xl font-poppins font-bold text-gray-900">
             Popular Fullstack Tracks
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-sm text-gray-600 max-w-3xl mx-auto">
             Master the technology stack that aligns with your career goals and industry demands
           </p>
         </motion.div>

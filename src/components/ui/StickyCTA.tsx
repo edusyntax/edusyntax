@@ -4,10 +4,14 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Download, X, Clock, Users, Award, Calendar, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import DemoBookingModal from '@/components/ui/DemoBookingModal';
 
 const StickyCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedTrack, setSelectedTrack] = useState('');
+  const [leadMode, setLeadMode] = useState<'Demo' | 'Brochure'>('Demo');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +22,12 @@ const StickyCTA = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+    const openModal = (track: string, mode: 'Demo' | 'Brochure') => {
+    setSelectedTrack(track);
+    setLeadMode(mode);
+    setModalOpen(true);
+  };
 
   return (
     <AnimatePresence>
@@ -98,19 +108,20 @@ const StickyCTA = () => {
                 <Button
                   variant="outline"
                   size="sm"
+                  onClick={() => openModal('Fullstack', 'Brochure')}
                   className="hidden sm:flex items-center space-x-2 border-trust-blue text-trust-blue hover:bg-trust-blue hover:text-white"
                 >
                   <Download className="w-4 h-4" />
                   <span>Download Syllabus</span>
                 </Button>
                 
-                <Button className="bg-primary-orange hover:bg-primary-orange/90 text-white flex items-center space-x-2 px-4 sm:px-6 py-2">
+                <Button onClick={() => openModal("Fullstack", "Demo")} className="bg-primary-orange hover:bg-primary-orange/90 text-white flex items-center space-x-2 px-4 sm:px-6 py-2">
                   <Phone className="w-4 h-4" />
                   <span className="hidden sm:inline">Book Free Demo</span>
                   <span className="sm:hidden">Demo</span>
                 </Button>
 
-                <Button className="bg-success-green hover:bg-success-green/90 text-white px-4 sm:px-6 py-2">
+                <Button onClick={() => openModal("Fullstack", "Demo")}  className="bg-success-green hover:bg-success-green/90 text-white px-4 sm:px-6 py-2">
                   <span className="hidden sm:inline">Apply Now</span>
                   <span className="sm:hidden">Apply</span>
                 </Button>
@@ -138,7 +149,13 @@ const StickyCTA = () => {
               </div>
             </div>
           </div>
-
+  <DemoBookingModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        trackName={selectedTrack}
+        mode={leadMode}
+        brochureUrl="/brochures/fullstack.pdf"
+      />
           {/* Urgency Indicator */}
           <motion.div
             initial={{ width: '100%' }}

@@ -103,10 +103,10 @@ export default function TrustGridSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-4 relative overflow-hidden">
       {/* Animated Background */}
-      <motion.div 
-        className="absolute inset-0 bg-gradient-to-br from-gray-50 to-blue-50"
+      {/* <motion.div 
+        className="absolute inset-0  from-gray-50 to-blue-50"
         animate={{
           background: [
             'linear-gradient(135deg, #f9fafb 0%, #eff6ff 100%)',
@@ -116,19 +116,19 @@ export default function TrustGridSection() {
           ]
         }}
         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-      />
+      /> */}
 
       <div className="container-custom relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center space-y-6 mb-16"
+          className="text-center space-y-6 mb-6"
         >
           <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-gray-900">
             Why Choose Edusyntax?
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-sm text-gray-600 max-w-3xl mx-auto">
             We provide everything you need to succeed in your development career with proven results
           </p>
         </motion.div>

@@ -14,10 +14,10 @@ export default function CertificationSection() {
     <div className="space-y-8">
       {/* Heading */}
       <div className="text-center space-y-4">
-        <h2 className="text-3xl lg:text-4xl font-poppins font-bold text-gray-900">
+        <h2 className="text-3xl lg:text-5xl font-poppins font-bold text-gray-900">
           Industry-Recognized Certification
         </h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p className="text-sm text-gray-600 max-w-3xl mx-auto">
           Earn a valuable certificate that's recognized by top companies worldwide
         </p>
       </div>

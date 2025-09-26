@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from 'framer-motion';
+import DemoBookingModal from "@/components/ui/DemoBookingModal";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ChevronDown,Play,Phone ,HelpCircle } from 'lucide-react';
 
 const faqs = [
   {
@@ -67,11 +69,20 @@ export default function DynamicFAQSection() {
         : [...prev, itemId]
     );
   };
+const [modalOpen, setModalOpen] = useState(false);
+  const [selectedTrack, setSelectedTrack] = useState("");
+  const [leadMode, setLeadMode] = useState<"Demo" | "Brochure">("Demo");
 
+  const openModal = (track: string, mode: "Demo" | "Brochure") => {
+    setSelectedTrack(track);
+    setLeadMode(mode);
+    setModalOpen(true);
+  };
+  
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-3 relative overflow-hidden">
       {/* Animated Background */}
-      <motion.div 
+      {/* <motion.div 
         className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-blue-50"
         animate={{
           background: [
@@ -82,7 +93,7 @@ export default function DynamicFAQSection() {
           ]
         }}
         transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-      />
+      /> */}
 
       <div className="container-custom relative">
         <motion.div
@@ -97,7 +108,7 @@ export default function DynamicFAQSection() {
           >
             <HelpCircle className="w-16 h-16 text-trust-blue mx-auto mb-4" />
           </motion.div>
-          <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-gray-900">
+          <h2 className="text-3xl lg:text-5xl font-poppins font-bold text-gray-900">
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -210,17 +221,26 @@ export default function DynamicFAQSection() {
               <p className="text-gray-600 mb-6">
                 Our counselors are here to help you make the right career decision
               </p>
-              <motion.button
-                className="bg-gradient-to-r from-trust-blue to-success-green text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Talk to a Counselor
-              </motion.button>
+                 <Button
+                text="Talk to a Counselor"
+                icon={<Phone className="w-5 h-5" />}
+                variant="default"
+                size="xl"
+                shine={true}
+                className="w-full px-8 sm:w-auto "
+                onClick={() => openModal("Fullstack", "Brochure")}
+              />
             </div>
           </motion.div>
         </div>
       </div>
+     <DemoBookingModal
+            isOpen={modalOpen}
+            onClose={() => setModalOpen(false)}
+            trackName={selectedTrack}
+            mode={leadMode}
+            brochureUrl="/brochures/fullstack.pdf" // optional, only used if lead type is Brochure
+          />
     </section>
   );
 }

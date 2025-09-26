@@ -27,12 +27,6 @@ import StickyCTA from '@/components/ui/StickyCTA';
 
 import { testimonials } from '@/data/testimonials';
 
-interface Course {
-  name: string;
-  demoAvailable?: boolean;
-  brochureUrl?: string;
-}
-
 export default function FullstackDevelopmentPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedTrack, setSelectedTrack] = useState('');
@@ -42,7 +36,7 @@ export default function FullstackDevelopmentPage() {
     "@context": "https://schema.org",
     "@type": "Course",
     "name": "Fullstack Web Development with Cloud & AI",
-    "description": "Master frontend, backend, cloud deployment, and AI tool integration in one comprehensive course designed for the next generation of developers.",
+    "description": "Master frontend, backend, cloud deployment, and AI tool integration in one comprehensive course.",
     "provider": {
       "@type": "Organization",
       "name": "Edusyntax",
@@ -64,12 +58,12 @@ export default function FullstackDevelopmentPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 overflow-x-hidden">
       {/* SEO & Structured Data */}
       <SEOHead
-        title="Fullstack Web Development with Cloud & AI | Edusyntax - Master Modern Development"
-        description="Master frontend, backend, cloud deployment, and AI tool integration. Choose from MERN, Python, Java, or AI-driven tracks. 96% placement rate with 1600+ hiring partners."
-        keywords="fullstack development, cloud deployment, AI integration, MERN stack, Python fullstack, Java enterprise, web development course"
+        title="Fullstack Web Development with Cloud & AI | Edusyntax"
+        description="Master frontend, backend, cloud deployment, and AI tool integration. 96% placement rate with 1600+ hiring partners."
+        keywords="fullstack development, cloud, AI, MERN stack, Python fullstack, Java enterprise"
         structuredData={structuredData}
       />
 
@@ -80,14 +74,18 @@ export default function FullstackDevelopmentPage() {
       <DynamicHeroSection onBookDemo={() => setModalOpen(true)} />
 
       {/* Hiring Partners */}
-      <HiringPartnerLogos />
+      <section className="py-5 sm:py-3 px-4 sm:px-6 lg:px-8">
+        <HiringPartnerLogos />
+      </section>
 
       {/* Interactive Fullstack Tracks */}
-      <InteractiveTracksSelector />
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+        <InteractiveTracksSelector />
+      </section>
 
       {/* Student Testimonials */}
-      <section className="w-full py-16 bg-white relative">
-        <div className="max-w-6xl mx-auto text-center px-4">
+      <section className="w-full py-1 relative px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -104,90 +102,93 @@ export default function FullstackDevelopmentPage() {
             Hear from our learners and how our fullstack tracks helped them succeed.
           </p>
 
-          <TestimonialCarousel
-            items={testimonials}
-            cardComponent={TestimonialCard}
-            speed={20}
-            gap={24}
-          />
+          <div className="overflow-x-hidden">
+            <TestimonialCarousel
+              items={testimonials}
+              cardComponent={TestimonialCard}
+              speed={20}
+              gap={24}
+            />
+          </div>
         </div>
       </section>
 
       {/* Why Choose Edusyntax */}
-      <TrustGridSection />
+      <section className="pt-5 sm:py-3 px-4 sm:px-6 lg:px-8">
+        <TrustGridSection />
+      </section>
 
       {/* Skill Timeline */}
-      <DynamicSkillTimeline />
+      <section className="py-12 sm:py-5 px-4 sm:px-6 lg:px-8">
+        <DynamicSkillTimeline />
+      </section>
 
       {/* Who Can Join */}
-      <section className="py-16 bg-white/50 backdrop-blur-xl">
-        <div className="container-custom">
-          <WhoCanJoin />
-        </div>
+      <section className="py-3 sm:py-5 backdrop-blur-xl px-4 sm:px-6 lg:px-8">
+        <WhoCanJoin />
       </section>
 
       {/* Certification Section */}
-      <section className="py-16 bg-white/50 backdrop-blur-xl">
-        <div className="container-custom">
-          <CertificationSection />
-        </div>
+      <section className="py-12 sm:py-16 bg-white/50 backdrop-blur-xl px-4 sm:px-6 lg:px-8">
+        <CertificationSection />
       </section>
 
       {/* Big CTA Banner */}
-      <section className="py-16">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center space-y-8"
-          >
-            <Card className="bg-gradient-to-br from-trust-blue via-success-green to-primary-orange text-white">
-              <CardContent className="p-12 space-y-6">
-                <h2 className="text-3xl lg:text-5xl font-poppins font-bold leading-tight">
-                  Don't just learn coding—build, deploy, and innovate with AI & Cloud!
-                </h2>
-                <p className="text-xl text-white/90 max-w-3xl mx-auto">
-                  Join the next generation of developers who are shaping the future with cutting-edge technologies
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                  <Button
-                    className="bg-gradient-to-r from-trust-blue to-success-green text-white text-lg px-8 py-4 font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center space-x-2 group"
-                    onClick={() => openModal('Fullstack', 'Demo')}
-                  >
-                    <Play className="w-5 h-5" />
-                    <span>Book Free Demo</span>
-                  </Button>
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center space-y-8 max-w-6xl mx-auto"
+        >
+          <Card className="bg-gradient-to-br from-trust-blue via-success-green to-primary-orange text-white">
+            <CardContent className="p-8 sm:p-12 space-y-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-poppins font-bold leading-tight break-words">
+                Don't just learn coding—build, deploy, and innovate with AI & Cloud!
+              </h2>
+              <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">
+                Join the next generation of developers shaping the future with cutting-edge technologies.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <Button
+                  className="bg-gradient-to-r from-trust-blue to-success-green text-white text-lg px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center space-x-2"
+                  onClick={() => openModal('Fullstack', 'Demo')}
+                >
+                  <Play className="w-5 h-5" />
+                  <span>Book Free Demo</span>
+                </Button>
 
-                  <Button
-                    variant="outline"
-                    className="border-2 border-trust-blue text-trust-blue hover:bg-trust-blue hover:text-white text-lg px-8 py-4 font-semibold rounded-xl flex items-center space-x-2 group"
-                    onClick={() => openModal('Fullstack', 'Brochure')}
-                  >
-                    <Phone className="w-5 h-5 group-hover:animate-pulse" />
-                    <span>Talk to a Counselor</span>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
+                <Button
+                  variant="outline"
+                  className="border-2 border-trust-blue text-trust-blue hover:bg-trust-blue hover:text-white text-lg px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl flex items-center justify-center space-x-2"
+                  onClick={() => openModal('Fullstack', 'Brochure')}
+                >
+                  <Phone className="w-5 h-5 animate-pulse" />
+                  <span>Talk to a Counselor</span>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
       </section>
 
       {/* FAQ Section */}
-      <DynamicFAQSection />
+      <section className="py-5 sm:py-5 px-4 sm:px-6 lg:px-8">
+        <DynamicFAQSection />
+      </section>
 
       {/* Lead Capture Form */}
-      <ConversionFormSection />
+      <section className="py-5 sm:py-5 px-4 sm:px-6 lg:px-8">
+        <ConversionFormSection />
+      </section>
 
+      {/* Sticky CTA */}
+      <StickyCTA />
 
-      {/*StickyCTA   */}
-        <StickyCTA />
       {/* Footer */}
       <Footer />
 
-
-      {/* Sticky CTA */}
+      {/* Modal */}
       <DemoBookingModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}

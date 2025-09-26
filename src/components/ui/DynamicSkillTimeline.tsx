@@ -65,7 +65,7 @@ export default function DynamicSkillTimeline() {
   const [hoveredPhase, setHoveredPhase] = useState<number | null>(null);
 
   return (
-    <section className="py-20 bg-white/30 backdrop-blur-xl relative overflow-hidden">
+    <section className="py-4 px-4 sm:px-6 lg:px-8  relative overflow-hidden">
       {/* Animated Background */}
       <motion.div 
         className="absolute inset-0 opacity-5"
@@ -80,26 +80,26 @@ export default function DynamicSkillTimeline() {
         transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
       />
 
-      <div className="container-custom relative">
+      <div className="container-custom relative max-w-full mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center space-y-6 mb-16"
+          className="text-center space-y-6 mb-2 py-3"
         >
-          <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-poppins font-bold text-gray-900">
             Your Skill Journey
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             A structured, hands-on path from beginner to job-ready fullstack developer
           </p>
         </motion.div>
 
         {/* Desktop Timeline */}
-        <div className="hidden md:block relative">
-          <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-trust-blue via-success-green via-primary-orange to-trust-blue transform -translate-y-1/2 z-0 rounded-full" />
-          <div className="grid grid-cols-4 gap-8 relative z-10">
+        <div className="hidden md:block relative overflow-hidden py-3">
+          <div className="absolute top-1/2 left-4 right-4 h-1 bg-gradient-to-r from-trust-blue  via-primary-orange to-trust-blue transform -translate-y-1/2 z-0 rounded-full" />
+          <div className="grid grid-cols-4 gap-6 relative z-20">
             {phases.map((phase, index) => (
               <motion.div
                 key={phase.phase}
@@ -107,21 +107,21 @@ export default function DynamicSkillTimeline() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className="text-center"
+                className="text-center px-2"
                 onHoverStart={() => setHoveredPhase(phase.phase)}
                 onHoverEnd={() => setHoveredPhase(null)}
               >
                 {/* Phase Icon */}
-                <div className="relative mb-8">
+                <div className="relative mb-6">
                   <motion.div 
-                    className={`w-24 h-24 ${phase.bgColor} rounded-full flex items-center justify-center mx-auto border-4 ${phase.borderColor} bg-white shadow-xl cursor-pointer`}
+                    className={`w-20 sm:w-24 h-20 sm:h-24 ${phase.bgColor} rounded-full flex items-center justify-center mx-auto border-4 ${phase.borderColor} bg-white shadow-xl cursor-pointer`}
                     whileHover={{ scale: 1.1 }}
                     onClick={() => setExpandedPhase(expandedPhase === phase.phase ? null : phase.phase)}
                   >
-                    <phase.icon className={`w-10 h-10 ${phase.color}`} />
+                    <phase.icon className={`w-6 sm:w-10 h-6 sm:h-10 ${phase.color}`} />
                   </motion.div>
                   <motion.div 
-                    className={`absolute -top-2 -right-2 w-10 h-10 ${phase.color.replace('text-', 'bg-')} rounded-full flex items-center justify-center text-white text-sm font-bold shadow-lg`}
+                    className={`absolute -top-2 -right-2 w-8 sm:w-10 h-8 sm:h-10 ${phase.color.replace('text-', 'bg-')} rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-bold shadow-lg`}
                     animate={hoveredPhase === phase.phase ? { scale: [1, 1.2, 1] } : {}}
                     transition={{ duration: 0.5 }}
                   >
@@ -131,17 +131,16 @@ export default function DynamicSkillTimeline() {
 
                 {/* Card */}
                 <motion.div layout className={`transition-all duration-500 ${expandedPhase === phase.phase ? 'scale-105' : ''}`}>
-                  <Card className="bg-gradient-to-br from-white/70 to-white/90 backdrop-blur-xl border border-gray-200/30 shadow-lg hover:shadow-2xl transition-all duration-300 rounded-2xl cursor-pointer"
-                        onClick={() => setExpandedPhase(expandedPhase === phase.phase ? null : phase.phase)}>
-                    <CardContent className="p-6 space-y-4">
-                      <div className="space-y-2">
-                        <h3 className="text-xl font-poppins font-bold text-gray-900">{phase.title}</h3>
+                  <Card className="bg-gradient-to-br from-white/70 to-white/90 backdrop-blur-xl border border-gray-200/30 shadow-lg hover:shadow-2xl transition-all duration-300 rounded-2xl cursor-pointer">
+                    <CardContent className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+                      <div className="space-y-1 sm:space-y-2">
+                        <h3 className="text-lg sm:text-xl font-poppins font-bold text-gray-900">{phase.title}</h3>
                         <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
                           <Clock className="w-4 h-4" />
                           <span>{phase.duration}</span>
                         </div>
                       </div>
-                      <p className="text-gray-700 text-sm leading-relaxed">
+                      <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                         {expandedPhase === phase.phase ? phase.expandedContent : phase.description}
                       </p>
 
@@ -151,13 +150,13 @@ export default function DynamicSkillTimeline() {
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
-                            className="space-y-3 border-t border-gray-100 pt-4"
+                            className="space-y-2 sm:space-y-3 border-t border-gray-100 pt-3 sm:pt-4"
                           >
                             <div className="flex flex-wrap gap-1">
                               {phase.skills.map(skill => (
                                 <span 
                                   key={skill} 
-                                  className={`text-xs px-2 py-1 rounded-full ${phase.bgColor} ${phase.color} border border-current/20`}
+                                  className={`text-xs sm:text-sm px-2 py-1 rounded-full ${phase.bgColor} ${phase.color} border border-current/20`}
                                 >
                                   {skill}
                                 </span>
@@ -187,30 +186,30 @@ export default function DynamicSkillTimeline() {
         </div>
 
         {/* Mobile Timeline */}
-        <div className="md:hidden space-y-8">
+        <div className="md:hidden space-y-6 sm:space-y-8">
           {phases.map((phase, index) => (
             <motion.div
               key={phase.phase}
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="flex items-start space-x-4"
+              className="flex items-start space-x-3 sm:space-x-4"
             >
               {/* Timeline Icon */}
               <div className="flex flex-col items-center">
                 <motion.div 
-                  className={`w-16 h-16 ${phase.bgColor} rounded-full flex items-center justify-center border-4 ${phase.borderColor} bg-white shadow-lg relative cursor-pointer`}
+                  className={`w-14 sm:w-16 h-14 sm:h-16 ${phase.bgColor} rounded-full flex items-center justify-center border-4 ${phase.borderColor} bg-white shadow-lg relative cursor-pointer`}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setExpandedPhase(expandedPhase === phase.phase ? null : phase.phase)}
                 >
-                  <phase.icon className={`w-6 h-6 ${phase.color}`} />
-                  <div className={`absolute -top-1 -right-1 w-6 h-6 ${phase.color.replace('text-', 'bg-')} rounded-full flex items-center justify-center text-white text-xs font-bold`}>
+                  <phase.icon className={`w-5 sm:w-6 h-5 sm:h-6 ${phase.color}`} />
+                  <div className={`absolute -top-1 -right-1 w-5 sm:w-6 h-5 sm:h-6 ${phase.color.replace('text-', 'bg-')} rounded-full flex items-center justify-center text-white text-xs sm:text-xs font-bold`}>
                     {phase.phase}
                   </div>
                 </motion.div>
                 {index < phases.length - 1 && (
-                  <div className="w-0.5 h-20 bg-gradient-to-b from-gray-300 to-gray-100 mt-4" />
+                  <div className="w-0.5 h-16 sm:h-20 bg-gradient-to-b from-gray-300 to-gray-100 mt-3 sm:mt-4" />
                 )}
               </div>
 
@@ -218,9 +217,9 @@ export default function DynamicSkillTimeline() {
               <div className="flex-1">
                 <Card className="bg-gradient-to-br from-white/70 to-white/90 backdrop-blur-xl border border-gray-200/30 shadow-lg rounded-2xl cursor-pointer"
                       onClick={() => setExpandedPhase(expandedPhase === phase.phase ? null : phase.phase)}>
-                  <CardContent className="p-4 space-y-3">
+                  <CardContent className="p-3 sm:p-4 space-y-2 sm:space-y-3">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-lg font-poppins font-bold text-gray-900">{phase.title}</h3>
+                      <h3 className="text-lg sm:text-xl font-poppins font-bold text-gray-900">{phase.title}</h3>
                       <motion.div
                         animate={{ rotate: expandedPhase === phase.phase ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
@@ -232,7 +231,7 @@ export default function DynamicSkillTimeline() {
                       <Clock className="w-4 h-4" />
                       <span>{phase.duration}</span>
                     </div>
-                    <p className="text-gray-700 text-sm leading-relaxed">
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                       {expandedPhase === phase.phase ? phase.expandedContent : phase.description}
                     </p>
 
@@ -242,13 +241,13 @@ export default function DynamicSkillTimeline() {
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: 'auto' }}
                           exit={{ opacity: 0, height: 0 }}
-                          className="space-y-3 border-t border-gray-100 pt-3"
+                          className="space-y-2 sm:space-y-3 border-t border-gray-100 pt-2 sm:pt-3"
                         >
                           <div className="flex flex-wrap gap-1">
                             {phase.skills.map(skill => (
                               <span 
                                 key={skill} 
-                                className={`text-xs px-2 py-1 rounded-full ${phase.bgColor} ${phase.color} border border-current/20`}
+                                className={`text-xs sm:text-sm px-2 py-1 rounded-full ${phase.bgColor} ${phase.color} border border-current/20`}
                               >
                                 {skill}
                               </span>
