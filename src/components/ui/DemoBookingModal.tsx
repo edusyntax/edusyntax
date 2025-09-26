@@ -25,6 +25,8 @@ type FormData = {
 };
 
 const WHATSAPP_NUMBER = '917997245921';
+const RETRIES = 2;
+
 const getWhatsAppMessage = (mode: 'Demo' | 'Brochure', trackName: string) =>
   `Hi! I just ${mode === 'Demo' ? 'booked a demo' : 'downloaded the brochure'} for the ${trackName} track.`;
 
@@ -54,6 +56,29 @@ export default function DemoBookingModal({ isOpen, onClose, trackName, mode, bro
     return null;
   };
 
+  const submitForm = async (payload: any, retries = RETRIES): Promise<any> => {
+    for (let i = 0; i <= retries; i++) {
+      try {
+        const res = await fetch('/api/book-demo', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error(`HTTP ${res.status}: ${text}`);
+        }
+
+        const data = await res.json();
+        if (data.result !== 'success') throw new Error(data.msg || 'Submission failed!');
+        return data;
+      } catch (err) {
+        if (i === retries) throw err;
+      }
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg(null);
@@ -65,45 +90,30 @@ export default function DemoBookingModal({ isOpen, onClose, trackName, mode, bro
     }
 
     setLoading(true);
+    const payload = { ...formData, course: trackName, leadType: mode };
 
     try {
-      const payload = { ...formData, course: trackName, leadType: mode };
+      await submitForm(payload);
+      setIsSubmitted(true);
 
-      // Call your Vercel serverless API
-      const res = await fetch('/api/book-demo', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-
-      const data = await res.json();
-
-      if (res.ok && data.result === 'success') {
-        setIsSubmitted(true);
-
-        // Brochure download
-        if (mode === 'Brochure' && brochureUrl) {
-          const link = document.createElement('a');
-          link.href = brochureUrl;
-          link.download = `${trackName}_Brochure.pdf`;
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        }
-
-        // WhatsApp redirect after 1s
-        setTimeout(() => {
-          const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(getWhatsAppMessage(mode, trackName))}`;
-          window.open(whatsappUrl, '_blank');
-        }, 1000);
-
-        // Auto-close modal
-        setTimeout(onClose, 2500);
-
-      } else {
-        setErrorMsg(data.msg || data.error || 'Submission failed!');
+      // Brochure download
+      if (mode === 'Brochure' && brochureUrl) {
+        const link = document.createElement('a');
+        link.href = brochureUrl;
+        link.download = `${trackName}_Brochure.pdf`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       }
 
+      // WhatsApp redirect after 1s
+      setTimeout(() => {
+        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(getWhatsAppMessage(mode, trackName))}`;
+        window.open(whatsappUrl, '_blank');
+      }, 1000);
+
+      // Auto-close modal
+      setTimeout(onClose, 2500);
     } catch (err: any) {
       console.error(err);
       setErrorMsg(err.message || 'Failed to submit form. Please try again later.');
