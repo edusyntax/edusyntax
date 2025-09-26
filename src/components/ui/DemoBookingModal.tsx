@@ -25,7 +25,6 @@ type FormData = {
 };
 
 const WHATSAPP_NUMBER = '917997245921';
-
 const getWhatsAppMessage = (mode: 'Demo' | 'Brochure', trackName: string) =>
   `Hi! I just ${mode === 'Demo' ? 'booked a demo' : 'downloaded the brochure'} for the ${trackName} track.`;
 
@@ -60,14 +59,17 @@ export default function DemoBookingModal({ isOpen, onClose, trackName, mode, bro
     setErrorMsg(null);
 
     const validationError = validateForm();
-    if (validationError) { setErrorMsg(validationError); return; }
+    if (validationError) {
+      setErrorMsg(validationError);
+      return;
+    }
 
     setLoading(true);
 
     try {
       const payload = { ...formData, course: trackName, leadType: mode };
 
-      // ✅ Call local API route
+      // Call your Vercel serverless API
       const res = await fetch('/api/book-demo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -95,9 +97,11 @@ export default function DemoBookingModal({ isOpen, onClose, trackName, mode, bro
           window.open(whatsappUrl, '_blank');
         }, 1000);
 
+        // Auto-close modal
         setTimeout(onClose, 2500);
+
       } else {
-        setErrorMsg(data.msg || 'Submission failed!');
+        setErrorMsg(data.msg || data.error || 'Submission failed!');
       }
 
     } catch (err: any) {
