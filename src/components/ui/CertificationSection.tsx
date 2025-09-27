@@ -7,7 +7,7 @@ import { CheckCircle, Building2 } from 'lucide-react';
 
 export default function CertificationSection() {
   const partnerLogos = [
-    'Microsoft', 'Google', 'Amazon', 'IBM', 'Oracle', 'Salesforce'
+    'HPLIFE',"HARVARD", 'META', 
   ];
 
   return (
@@ -103,7 +103,7 @@ export default function CertificationSection() {
                 ))}
               </div>
               <p className="text-sm text-gray-600">
-                +1600 companies recognize our certification program
+                100+ companies recognize our certification program
               </p>
             </CardContent>
           </Card>

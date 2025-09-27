@@ -47,7 +47,7 @@ const StickyCTA = () => {
                 exit={{ height: 0, opacity: 0 }}
                 className="bg-trust-blue text-white overflow-hidden"
               >
-                <div className="container-custom px-4 py-6">
+                <div className="container-custom px-3 py-6">
                   <div className="grid md:grid-cols-4 gap-6 text-center">
                     <div className="space-y-2">
                       <Users className="w-8 h-8 text-primary-orange mx-auto" />
@@ -104,7 +104,7 @@ const StickyCTA = () => {
               </div>
 
               {/* Right Actions */}
-              <div className="flex items-center space-x-2 sm:space-x-3">
+              <div className="flex items-center space-x-1 sm:space-x-3">
                 <Button
                   variant="outline"
                   size="sm"
@@ -142,7 +142,7 @@ const StickyCTA = () => {
                 {/* Close Button */}
                 <button
                   onClick={() => setIsVisible(false)}
-                  className="p-2 text-gray-500 hover:text-gray-700 transition-colors"
+                  className=" text-gray-500 hover:text-gray-700 transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>

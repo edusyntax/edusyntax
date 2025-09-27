@@ -7,13 +7,13 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    title: "Priya Sharma",
+    title: "Abhishek v",
     avatar: "/avatars/1.jpeg",
-    text: "From zero coding knowledge to landing my dream job at Infosys in just 6 months. The mentorship was incredible and the hands-on projects gave me real confidence.",
-    role: "Software Engineer @ Infosys",
+    text: "From zero coding knowledge to landing my dream job at robokidz in just 6 months. The mentorship was incredible and the hands-on projects gave me real confidence.",
+    role: "frontend developer @robokidz ",
   },
   {
-    title: "Rohit Kumar",
+    title: "sridhar M",
     avatar: "/avatars/2.jpeg",
     text: "Career switch at 29 seemed impossible. Edusyntax made it happen with their structured approach, dedicated support, and industry-relevant curriculum.",
     role: "Full Stack Developer @ TCS",
@@ -22,13 +22,13 @@ export const testimonials: Testimonial[] = [
     title: "Sneha Patel",
     avatar: "/avatars/3.jpeg",
     text: "The hands-on projects and real-world experience helped me build confidence. I went from being a fresher to getting multiple job offers.",
-    role: "React Developer @ Wipro",
+    role: "React Developer @ Honeywell",
   },
   {
-    title: "Vikash Singh",
+    title:" vishnu  ",
     avatar: "/avatars/4.jpeg",
     text: "From teaching to tech - the transition was smooth with Edusyntax's comprehensive curriculum and personalized career guidance.",
-    role: "Backend Developer @ Accenture",
+    role: "Backend Developer @ 3rd eye",
   },
   {
     title: "Anita Desai",
@@ -37,27 +37,27 @@ export const testimonials: Testimonial[] = [
     role: "Frontend Engineer @ Cognizant",
   },
   {
-    title: "Arjun Mehta",
+    title: "Arjun M",
     avatar: "/avatars/6.jpeg",
     text: "Upgraded my skills and career trajectory. Now working on exciting projects with cutting-edge technologies and earning 3x my previous salary.",
-    role: "Software Engineer @ HCL",
+    role: "python developer @ delta tech",
   },
   {
-    title: "Kavya Reddy",
+    title: "Suresh G",
     avatar: "/avatars/4.jpeg",
     text: "The AI and cloud modules were game-changers. I'm now working on next-generation applications that I never thought I could build.",
-    role: "Full Stack Developer @ Capgemini",
+    role: "Full Stack Developer @ cloud 4c",
   },
   {
-    title: "Rajesh Gupta",
-    avatar: "/avatars/6.jpeg",
+    title: "Rajesh G",
+    avatar: "/avatars/7.jpg",
     text: "Best investment in my career. The freelancing guidance helped me earn extra income while job hunting. Now I have the best of both worlds.",
-    role: "Senior Developer @ Tech Mahindra",
+    role: "java Developer @YOTTA",
   },
   {
-    title: "Pooja Agarwal",
-    avatar: "/avatars/5.jpeg",
-    text: "The mobile development track was exactly what I needed. From web to mobile, I can now build complete digital solutions for clients.",
-    role: "React Native Developer @ Mindtree",
+    title: "vikas reddy",
+    avatar: "/avatars/8.jpeg",
+    text: "The web development track was exactly what I needed. I can now build complete digital solutions for clients.",
+    role: "fullstackdeveloper @ Accenture",
   },
 ];

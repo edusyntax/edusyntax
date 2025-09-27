@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 
 export default function HiringPartnerLogos() {
-  const totalLogos = 42; // can increase dynamically later
-  const logos = Array.from({ length: totalLogos }, (_, i) => ({
+  const totalLogos = 30; // can increase dynamically later
+  const logos = Array.from({ length:totalLogos }, (_, i) => ({
     name: `Logo ${i + 1}`,
     alt: `Logo ${i + 1}`,
-    src: `/logos/${i + 1}.svg`,
+    src: `/logos/${i}.svg`,
   }));
 
   // Duplicate logos for seamless marquee

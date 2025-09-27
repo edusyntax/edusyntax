@@ -183,7 +183,10 @@ export default function FullstackDevelopmentPage() {
       </section>
 
       {/* Sticky CTA */}
-      <StickyCTA />
+         <section className=" mx-2">
+          <StickyCTA />
+         </section>
+      
 
       {/* Footer */}
       <Footer />
