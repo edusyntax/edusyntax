@@ -22,10 +22,10 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/courses/fullstack-development" element={<FullstackDevelopment />} />
           <Route path="/courses/data-science" element={<DataScience />} />
+          <Route path="/courses/digital-marketing" element={<DigitalMarketing />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/refund-policy" element={<RefundPolicy />} />
             <Route path="/terms" element={<Terms />} />
-          <Route path="/courses/digital-marketing" element={<DigitalMarketing />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -24,7 +24,7 @@ const tracks = [
   },
   {
     id: 'python',
-    title: 'Python Stack',
+    title: 'Python FullStack',
     subtitle: 'Django • Flask • PostgreSQL • React',
     tagline: 'Enterprise Ready',
     enrolled: '1,923 Enrolled',
@@ -36,7 +36,7 @@ const tracks = [
   },
   {
     id: 'java',
-    title: 'Java Stack',
+    title: 'Java FullStack',
     subtitle: 'Spring Boot • Microservices • Angular',
     tagline: 'High Demand Track',
     enrolled: '1,456 Enrolled',
@@ -48,7 +48,7 @@ const tracks = [
   },
   {
     id: 'ai',
-    title: 'AI-Driven Stack',
+    title: 'FullStack Ai',
     subtitle: 'Fullstack + Machine Learning',
     tagline: 'Future Ready',
     enrolled: '987 Enrolled',

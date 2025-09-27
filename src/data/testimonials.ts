@@ -43,12 +43,6 @@ export const testimonials: Testimonial[] = [
     role: "python developer @ delta tech",
   },
   {
-    title: "Suresh G",
-    avatar: "/avatars/4.jpeg",
-    text: "The AI and cloud modules were game-changers. I'm now working on next-generation applications that I never thought I could build.",
-    role: "Full Stack Developer @ cloud 4c",
-  },
-  {
     title: "Rajesh G",
     avatar: "/avatars/7.jpg",
     text: "Best investment in my career. The freelancing guidance helped me earn extra income while job hunting. Now I have the best of both worlds.",

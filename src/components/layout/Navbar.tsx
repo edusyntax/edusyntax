@@ -39,7 +39,7 @@ const Navbar = () => {
       dropdown: [
         { name: "Fullstack Development", href: "/courses/fullstack-development" },
         { name: "Data Science", href: "/courses/data-science" },
-        { name: "AWS Cloud", href: "/courses/aws-cloud" },
+        { name: "Digital Marketing", href: "/courses/digital-marketing" },
       ],
     },
     { name: "Success Stories", href: "/successstories" },

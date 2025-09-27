@@ -106,7 +106,7 @@ const Footer = () => {
               {/* Logo */}
               <div className="flex items-center space-x-2">
                 <div className="w-12 h-12 bg-primary-orange rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-2xl">L</span>
+                  <span className="text-white font-bold text-2xl">ES</span>
                 </div>
                 <div>
                   <h1 className="text-2xl font-poppins font-bold">Edusyntax</h1>
@@ -123,15 +123,15 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-gray-300">
                   <Phone className="w-5 h-5 text-primary-orange" />
-                  <span>+91 9999-999-999</span>
+                  <span>+91 7997245921</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
                   <Mail className="w-5 h-5 text-primary-orange" />
-                  <span>hello@edusyntax.com</span>
+                  <span>admin@edusyntax.com</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
                   <MapPin className="w-5 h-5 text-primary-orange" />
-                  <span>Bangalore, India</span>
+                  <span>Hyderabad, India</span>
                 </div>
               </div>
             </motion.div>
