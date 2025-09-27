@@ -33,7 +33,7 @@ export default function DynamicHeroSection({
   };
 
   return (
-    <section className="relative pt-20 pb-1 overflow-hidden min-h-screen flex items-center ">
+    <section className="relative pt-20 pb-1 px-4 overflow-hidden min-h-screen flex items-center ">
       {/* Animated Background start */}
       <div className="absolute inset-0">
         <motion.div
