@@ -11,7 +11,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import SEOHead from '@/components/seo/SEOHead';
 
-import HiringPartnerLogos from '@/components/ui/HiringPartnerLogos';
+
 import InteractiveTracksSelector from '@/components/ui/InteractiveTracksSelector';
 import DynamicSkillTimeline from '@/components/ui/DynamicSkillTimeline';
 import DynamicFAQSection from '@/components/ui/DynamicFAQSection';
@@ -21,9 +21,12 @@ import CertificationSection from '@/components/ui/CertificationSection';
 import ConversionFormSection from '@/components/ui/CareerBoosterCard';
 import TestimonialCarousel from '@/components/ui/TestimonialCarousel';
 import TestimonialCard from '@/components/ui/TestimonialCard';
+import CompanyLogoCard from "@/components/ui/CompanyLogoCard";
+import { companies } from '@/data/companies';
 import DemoBookingModal from '@/components/ui/DemoBookingModal';
 import DynamicHeroSection from '@/components/ui/DynamicHeroSection';
 import StickyCTA from '@/components/ui/StickyCTA';
+import { fullstackFaqs } from '@/data/FAQ';
 
 import { testimonials } from '@/data/testimonials';
 
@@ -74,9 +77,33 @@ export default function FullstackDevelopmentPage() {
       <DynamicHeroSection onBookDemo={() => setModalOpen(true)} />
 
       {/* Hiring Partners */}
-      <section className="py-5 sm:py-3 px-4 sm:px-6 lg:px-8">
-        <HiringPartnerLogos />
-      </section>
+      {/* Hiring Partners */}
+<section className="w-full pt-2">
+  <div className="max-w-6xl mx-auto text-center px-4">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2 }}
+    >
+      <Badge className="bg-gradient-to-r from-trust-blue to-success-green text-white text-sm px-6 py-2 shadow-lg mb-4 inline-flex items-center">
+        <Sparkles className="w-4 h-4 mr-2" />
+        Companies We Have Tied Up With
+      </Badge>
+
+      <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto mb-8">
+       From learning to earning — our partners make your dream job a reality.
+      </p>
+    </motion.div>
+
+    <TestimonialCarousel
+      items={companies}
+      rows={2}
+      cardComponent={CompanyLogoCard}
+      speed={30}
+      gap={24}
+    />
+  </div>
+</section>
 
       {/* Interactive Fullstack Tracks */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
@@ -174,7 +201,7 @@ export default function FullstackDevelopmentPage() {
 
       {/* FAQ Section */}
       <section className="py-5 sm:py-5 px-4 sm:px-6 lg:px-8">
-        <DynamicFAQSection />
+         <DynamicFAQSection faqs={fullstackFaqs}/>
       </section>
 
       {/* Lead Capture Form */}

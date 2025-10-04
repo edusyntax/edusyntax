@@ -51,7 +51,7 @@ const StickyCTA = () => {
                   <div className="grid md:grid-cols-4 gap-6 text-center">
                     <div className="space-y-2">
                       <Users className="w-8 h-8 text-primary-orange mx-auto" />
-                      <div className="text-2xl font-bold">10,000+</div>
+                      <div className="text-2xl font-bold">1000+</div>
                       <div className="text-sm opacity-90">Students Trained</div>
                     </div>
                     <div className="space-y-2">
@@ -67,7 +67,7 @@ const StickyCTA = () => {
                     <div className="space-y-2">
                       <Calendar className="w-8 h-8 text-success-green mx-auto" />
                       <div className="text-2xl font-bold">Next Batch</div>
-                      <div className="text-sm opacity-90">Starts Jan 15</div>
+                      <div className="text-sm opacity-90">Starts oct 25</div>
                     </div>
                   </div>
                 </div>
