@@ -12,26 +12,26 @@ export const highlights: IconTextItem[] = [
 export const dataScienceHighlights = [
   {
     id: 1,
-    title: "AI & ML Projects",
-    subtitle: "Hands-on projects in real business domains.",
-    image: "/images/ai-ml-projects.svg",
+    title: "100% Job Assistance",
+    subtitle: "Resume, mock interviews & placement support",
+    image: "/images/interview.svg",
   },
   {
     id: 2,
-    title: "Data Visualization",
-    subtitle: "Master PowerBI, Tableau, and Python dashboards.",
-    image: "/images/data-visualization.svg",
+    title: "Small Batches",
+    subtitle: "15 students per batch for personalized learning",
+    image: "/images/softskills.svg",
   },
   {
     id: 3,
-    title: "Model Deployment",
-    subtitle: "Deploy models using AWS, Flask, and Streamlit.",
-    image: "/images/model-deployment.svg",
+    title: "50+ Projects",
+    subtitle: "Hands-on projects to build real-world skills",
+    image: "/images/eccomerce.svg",
   },
   {
     id: 4,
-    title: "Career Mentorship",
-    subtitle: "1:1 support from top data scientists.",
-    image: "/images/data-mentorship.svg",
+    title: "₹10,000+ Worth Benefits",
+    subtitle: "Tools, resources & course materials included",
+    image: "/images/profileb.svg",
   },
 ];

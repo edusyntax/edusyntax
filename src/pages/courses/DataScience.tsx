@@ -123,7 +123,7 @@ export default function DataSciencePage() {
       <section className="py-1 sm:py-1 px-4 sm:px-6 lg:px-8">
         <ProjectShowcase
           sectionNumber="2"
-          title="Student Projects"
+          title="Capstone  Projects"
           subtitle="Explore real-world projects built by our Data Science students."
           steps={dataScienceProjects}
           columns="grid-cols-2 lg:grid-cols-4"
