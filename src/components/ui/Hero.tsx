@@ -141,7 +141,7 @@ export default function HeroModern() {
   {/* Image */}
   <div className="relative w-full max-w-md lg:max-w-lg">
     <img
-      src="/public/images/girl-r.jpg" // replace with your generated image path
+      src="/public/images/main.jpg" // replace with your generated image path
       alt="Hero Illustration"
       className="w-full h-auto rounded-xl shadow-2xl"
     />
