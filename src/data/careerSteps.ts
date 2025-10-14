@@ -108,3 +108,16 @@ export const extraBenefits: Benefit[] = [
     image: "/images/interviewprep.svg" 
   },
 ];
+
+
+import { Users, Building2, BookOpen, Wrench, Award, Briefcase } from 'lucide-react';
+import { Feature } from "@/components/ui/WhyChooseUs";
+
+export const myFeatures: Feature[] = [
+  { icon: Users, title: 'Expert Trainers', gradient: 'from-trust-blue to-blue-600' },
+  { icon: Building2, title: '1-on-1 Mentorship', gradient: 'from-success-green to-green-600' },
+  { icon: BookOpen, title: 'Industry-Relevant Curriculum', gradient: 'from-primary-orange to-orange-600' },
+  { icon: Wrench, title: 'Hands-on Projects', gradient: 'from-purple-500 to-purple-700' },
+  { icon: Award, title: 'Community Support',  gradient: 'from-pink-500 to-pink-700' },
+  { icon: Briefcase, title: 'Freelancing Guidance', gradient: 'from-indigo-500 to-indigo-700' },
+];

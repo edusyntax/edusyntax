@@ -96,3 +96,49 @@ export const dataScienceModules = [
     downloadLink: "https://example.com/syllabus/module-6.pdf",
   },
 ];
+
+
+
+import { CourseCardProps } from "@/components/ui/CourseCard"
+
+
+
+export const courses: CourseCardProps[] = [
+  {
+    title: "Data Science & Ai ",
+    audience: "Freshers & Professionals",
+    duration: "6 Months",
+    projects: "10+ Real Projects",
+    image: "/images/ds-ai.jpeg",
+    brochureUrl: "/brochures/data-science.pdf",
+    slug: "data-science",
+  },
+  {
+    title: "Python&Java Full Stack Development",
+    audience: "Freshers",
+    duration: "6 Months",
+    projects: "18+ Real Projects",
+    image: "/images/fs-ai.jpeg",
+    brochureUrl: "/brochures/fullstack.pdf",
+    slug: "fullstack-development",
+  },
+  {
+    title: "Digital Marketing",
+    audience: "Professionals & Entrepreneurs",
+    duration: "3 Months",
+    projects: "10+ Real Projects",
+    image: "/images/digital.jpeg",
+    brochureUrl: "/brochures/digital-marketing.pdf",
+    slug: "digital-marketing",
+  },
+  {
+    title: "AWS & DevOps",
+    audience: "Working Professionals",
+    duration: "5 Months",
+    projects: "5+ Real Projects",
+    image: "/images/cloud-ai.jpeg",
+    brochureUrl: "/brochures/aws.pdf",
+    slug: "aws-devops",
+  },
+];
+

@@ -82,7 +82,7 @@ export default function DynamicHeroDataScience({
             </motion.h1>
 
             {/* Point-wise Hero Features */}
-            <motion.div className="space-y-4 mt-6">
+            <motion.div className="space-y-4 mt-6 ms">
               {heroPoints.map((item, index) => (
                 <motion.div
                   key={index}
@@ -99,7 +99,7 @@ export default function DynamicHeroDataScience({
 
             {/* Stats */}
             <motion.div
-              className="grid grid-cols-3 gap-6 justify-center lg:justify-start mt-6"
+              className="grid grid-cols-3 gap-6 justify-center lg:justify-start mt-4 "
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
             >

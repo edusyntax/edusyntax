@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Menu, ChevronDown, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import { Link } from "react-router-dom"; // <-- Use Link for SPA routing
 
 // Static CTA button classes for Tailwind
 const ctaButtonClasses = {
@@ -73,33 +74,44 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
                 <div key={item.name} className="relative">
-                  <button
-                    className="flex items-center space-x-1 text-gray-700 hover:text-primary-orange transition-colors duration-150 font-medium"
-                    onClick={() =>
-                      setActiveDropdown(activeDropdown === item.name ? null : item.name)
-                    }
-                  >
-                    <span>{item.name}</span>
-                    {item.dropdown && <ChevronDown className="w-4 h-4" />}
-                  </button>
-                  {item.dropdown && activeDropdown === item.name && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 py-2"
-                    >
-                      {item.dropdown.map((dropdownItem) => (
-                        <a
-                          key={dropdownItem.name}
-                          href={dropdownItem.href}
-                          className="block px-4 py-2 text-gray-700 hover:text-primary-orange hover:bg-secondary-beige/50 transition-colors duration-150"
-                          onClick={() => setActiveDropdown(null)}
+                  {item.dropdown ? (
+                    <>
+                      <button
+                        className="flex items-center space-x-1 text-gray-700 hover:text-primary-orange transition-colors duration-150 font-medium"
+                        onClick={() =>
+                          setActiveDropdown(activeDropdown === item.name ? null : item.name)
+                        }
+                      >
+                        <span>{item.name}</span>
+                        <ChevronDown className="w-4 h-4" />
+                      </button>
+                      {activeDropdown === item.name && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 py-2"
                         >
-                          {dropdownItem.name}
-                        </a>
-                      ))}
-                    </motion.div>
+                          {item.dropdown.map((dropdownItem) => (
+                            <Link
+                              key={dropdownItem.name}
+                              to={dropdownItem.href}
+                              className="block px-4 py-2 text-gray-700 hover:text-primary-orange hover:bg-secondary-beige/50 transition-colors duration-150"
+                              onClick={() => setActiveDropdown(null)}
+                            >
+                              {dropdownItem.name}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className="text-gray-700 hover:text-primary-orange transition-colors duration-150 font-medium"
+                    >
+                      {item.name}
+                    </Link>
                   )}
                 </div>
               ))}
@@ -159,12 +171,7 @@ const Navbar = () => {
                           viewBox="0 0 24 24"
                           stroke="currentColor"
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M6 18L18 6M6 6l12 12"
-                          />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         </svg>
                       </button>
                     </SheetClose>
@@ -173,24 +180,24 @@ const Navbar = () => {
                   <nav className="flex flex-col space-y-4">
                     {navItems.map((item) => (
                       <div key={item.name}>
-                        <a
-                          href={item.href}
+                        <Link
+                          to={item.href}
                           onClick={() => setIsOpen(false)}
                           className="text-lg font-medium transition-colors hover:text-[#E98C3A]"
                         >
                           {item.name}
-                        </a>
+                        </Link>
                         {item.dropdown && (
                           <div className="ml-4 space-y-2 mt-2">
                             {item.dropdown.map((dropdownItem) => (
-                              <a
+                              <Link
                                 key={dropdownItem.name}
-                                href={dropdownItem.href}
+                                to={dropdownItem.href}
                                 className="block py-1 text-gray-600 hover:text-[#E98C3A] transition-colors text-sm"
                                 onClick={() => setIsOpen(false)}
                               >
                                 {dropdownItem.name}
-                              </a>
+                              </Link>
                             ))}
                           </div>
                         )}

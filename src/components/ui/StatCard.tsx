@@ -17,12 +17,12 @@ export default function StatCard({
   label,
   color = 'text-black',
   delay = 0,
-  borderClass = 'border-white/30 dark:border-gray-600',
+  borderClass = 'border-black/10 dark:border-gray-600',
   shine = false,
 }: StatCardProps) {
   return (
     <motion.div
-      className={`relative text-center space-y-2 p-4 bg-white/40 backdrop-blur-xl rounded-2xl border ${borderClass} overflow-hidden shadow-sm`}
+      className={`relative text-center space-y-2 p-3 bg-white/40 backdrop-blur-xl rounded-2xl  border ${borderClass} overflow-hidden shadow-sm`}
       whileHover={{ scale: 1.05 }}
       transition={{ type: 'spring', stiffness: 300 }}
     >
