@@ -19,6 +19,7 @@ import DynamicHeroDataScience from '@/components/ui/DynamicHeroDataScience';
 import CourseCurriculumSection from '@/components/ui/CourseCurriculumSection';
 import ProjectShowcase from '@/components/ui/ProjectShowcase';
 import { dataScienceModules } from '@/data/courseModules';
+import AutoOpenDemoModal from '@/components/ui/AutoOpenDemoModal';
 import {
   
   dataScienceProjects,
@@ -231,9 +232,11 @@ export default function DataSciencePage() {
         <DynamicFAQSection faqs={dataScienceFaqs} />
       </section>
 
+
       {/* Footer */}
       <Footer />
 
+<AutoOpenDemoModal/>
       {/* Modal */}
       <DemoBookingModal
         isOpen={modalOpen}

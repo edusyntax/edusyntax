@@ -24,6 +24,8 @@ import CertificationSection from '@/components/ui/CertificationSection';
 import GuidanceSection from '@/components/ui/Guidance';
 import CourseCard from '@/components/ui/CourseCard';
 import DemoBookingModal from "@/components/ui/DemoBookingModal";
+import StickyCTA from '@/components/ui/StickyCTA';
+import AutoOpenDemoModal from "@/components/ui/AutoOpenDemoModal";
 import { useNavigate } from "react-router-dom";
 
 import { myFeatures } from '@/data/careerSteps';
@@ -129,7 +131,7 @@ export default function HomePage() {
     </motion.div>
 
     {/* Courses Grid */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 p-2">
       {courses.map((course) => (
         <CourseCard
           key={course.slug}
@@ -207,9 +209,13 @@ export default function HomePage() {
       <section className="py-1 sm:py-2 bg-white/50 backdrop-blur-xl px-4 sm:px-6 lg:px-8">
         <CertificationSection />
       </section>
+         {/* <section className=" mx-2">
+          <StickyCTA />
+         </section> */}
 
       {/* Footer */}
       <Footer />
+      <AutoOpenDemoModal/>
           <DemoBookingModal
                   isOpen={modalOpen}
                   onClose={() => setModalOpen(false)}

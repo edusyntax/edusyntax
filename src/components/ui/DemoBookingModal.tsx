@@ -15,6 +15,7 @@ interface DemoBookingModalProps {
   trackName: string;
   mode: 'Demo' | 'Brochure';
   brochureUrl?: string;
+  autoOpen?: boolean;
 }
 
 type FormData = {

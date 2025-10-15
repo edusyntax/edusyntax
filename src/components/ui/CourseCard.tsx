@@ -28,7 +28,7 @@ export default function CourseCard({
   onBrochureClick,
 }: CourseCardProps) {
   return (
-    <div className="w-full bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col h-full transform hover:scale-[1.02] transition-transform duration-200">
+    <div className="w-full border bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col h-full transform hover:scale-[1.02] transition-transform duration-200">
 
       {/* Header Image */}
       <div className="h-36 overflow-hidden bg-purple-500 flex items-center justify-center">
@@ -71,6 +71,7 @@ export default function CourseCard({
             variant="outline"
             className="w-full py-3 flex items-center justify-center gap-2"
             onClick={onExplore}
+            shine={true}
           >
             <span>GO TO PROGRAM</span>
           </Button>

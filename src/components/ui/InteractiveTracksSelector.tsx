@@ -60,23 +60,13 @@ const tracks = [
   }
 ];
 
-export default function InteractiveTracksSelector() {
+export default function InteractiveTracksSelector({ onAction }: { 
+  onAction: (track: string, mode: 'Demo' | 'Brochure', brochureUrl?: string) => void 
+}) {
   const [hoveredTrack, setHoveredTrack] = useState<string | null>(null);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedTrack, setSelectedTrack] = useState('');
-  const [leadMode, setLeadMode] = useState<'Demo' | 'Brochure'>('Demo');
-  const [selectedBrochure, setSelectedBrochure] = useState<string | null>(null);
-
-  const openModal = (track: string, mode: 'Demo' | 'Brochure', brochureUrl?: string) => {
-    setSelectedTrack(track);
-    setLeadMode(mode);
-    setSelectedBrochure(brochureUrl || null);
-    setModalOpen(true);
-  };
 
   return (
-    <section className=" backdrop-blur-xl relative overflow-hidden">
-      {/* Background Pattern */}
+    <section className="backdrop-blur-xl relative overflow-visible">
       <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0 bg-gradient-to-r from-trust-blue via-success-green to-primary-orange"
@@ -123,14 +113,12 @@ export default function InteractiveTracksSelector() {
                 }`}
               >
                 <CardContent className="p-8 h-full flex flex-col relative">
-                  {/* Gradient Overlay on Hover */}
                   <motion.div
                     className={`absolute inset-0 bg-gradient-to-br ${track.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 0.05 }}
                   />
 
-                  {/* Header */}
                   <div className="flex items-start justify-between mb-6 relative z-10">
                     <motion.div
                       className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${track.gradient} flex items-center justify-center shadow-lg`}
@@ -147,71 +135,48 @@ export default function InteractiveTracksSelector() {
                     )}
                   </div>
 
-                  {/* Content */}
                   <div className="flex-1 space-y-4 relative z-10">
-                    <div>
-                      <h3 className="text-2xl font-poppins font-bold text-gray-900 mb-2">
-                        {track.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 leading-relaxed mb-3">
-                        {track.subtitle}
-                      </p>
-                      <Badge
-                        variant="outline"
-                        className="text-success-green border-success-green mb-4"
-                      >
-                        {track.tagline}
-                      </Badge>
-                    </div>
-
-                    {/* Stats */}
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between text-sm">
-                        <div className="flex items-center space-x-2 text-gray-600">
-                          <Users className="w-4 h-4" />
-                          <span>{track.enrolled}</span>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                          <span className="text-gray-700 font-semibold">{track.rating}</span>
-                        </div>
-                      </div>
-
-                      {/* Features */}
-                      <div className="space-y-2">
-                        {track.features.map((feature, idx) => (
-                          <motion.div
-                            key={feature}
-                            className="flex items-center space-x-2 text-xs text-gray-600"
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: idx * 0.1 }}
-                          >
-                            <div
-                              className={`w-2 h-2 rounded-full bg-gradient-to-r ${track.gradient}`}
-                            />
-                            <span>{feature}</span>
-                          </motion.div>
-                        ))}
-                      </div>
+                    <h3 className="text-2xl font-poppins font-bold text-gray-900 mb-2">
+                      {track.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed mb-3">{track.subtitle}</p>
+                    <Badge
+                      variant="outline"
+                      className="text-success-green border-success-green mb-4"
+                    >
+                      {track.tagline}
+                    </Badge>
+                    <div className="space-y-2">
+                      {track.features.map((feature, idx) => (
+                        <motion.div
+                          key={feature}
+                          className="flex items-center space-x-2 text-xs text-gray-600"
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.1 }}
+                        >
+                          <div
+                            className={`w-2 h-2 rounded-full bg-gradient-to-r ${track.gradient}`}
+                          />
+                          <span>{feature}</span>
+                        </motion.div>
+                      ))}
                     </div>
                   </div>
 
-                  {/* Actions */}
                   <div className="space-y-3 pt-6 border-t border-gray-100 relative z-10">
-                  <Button
-  className={`w-full bg-gradient-to-r ${track.gradient} text-white hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 group`}
-  onClick={() => openModal(track.title, 'Demo', track.brochureUrl)}
->
-  <Play className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-  <span>Book Free Demo</span>
-</Button>
-
+                    <Button
+                      className={`w-full bg-gradient-to-r ${track.gradient} text-white hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 group`}
+                      onClick={() => onAction(track.title, 'Demo', track.brochureUrl)}
+                    >
+                      <Play className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      <span>Book Free Demo</span>
+                    </Button>
 
                     <Button
                       variant="outline"
                       className="w-full border-2 border-trust-blue text-trust-blue hover:bg-trust-blue hover:text-white text-lg py-4 font-semibold rounded-xl flex items-center justify-center space-x-2 group"
-                      onClick={() => openModal(track.title, 'Brochure', track.brochureUrl)}
+                      onClick={() => onAction(track.title, 'Brochure', track.brochureUrl)}
                     >
                       <Download className="w-5 h-5 group-hover:animate-bounce" />
                       <span>Download Brochure</span>
@@ -221,14 +186,6 @@ export default function InteractiveTracksSelector() {
               </Card>
             </motion.div>
           ))}
-
-          <DemoBookingModal
-            isOpen={modalOpen}
-            onClose={() => setModalOpen(false)}
-            trackName={selectedTrack}
-            mode={leadMode}
-            brochureUrl={selectedBrochure || undefined}
-          />
         </div>
       </div>
     </section>

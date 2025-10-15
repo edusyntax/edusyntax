@@ -27,6 +27,7 @@ import DemoBookingModal from '@/components/ui/DemoBookingModal';
 import DynamicHeroSection from '@/components/ui/DynamicHeroSection';
 import StickyCTA from '@/components/ui/StickyCTA';
 import { fullstackFaqs } from '@/data/FAQ';
+import AutoOpenDemoModal from '@/components/ui/AutoOpenDemoModal';
 
 import { testimonials } from '@/data/testimonials';
 
@@ -106,8 +107,8 @@ export default function FullstackDevelopmentPage() {
 </section>
 
       {/* Interactive Fullstack Tracks */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-        <InteractiveTracksSelector />
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 overflow-visible">
+        <InteractiveTracksSelector onAction={openModal} />
       </section>
 
       {/* Student Testimonials */}
@@ -217,6 +218,7 @@ export default function FullstackDevelopmentPage() {
 
       {/* Footer */}
       <Footer />
+      <AutoOpenDemoModal/>
 
       {/* Modal */}
       <DemoBookingModal
