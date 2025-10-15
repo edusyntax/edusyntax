@@ -5,7 +5,7 @@ import { CreditCard, AlertCircle, CheckCircle, XCircle, Phone, Mail } from 'luci
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import StickyCTA from '@/components/ui/StickyCTA';
+
 import { useEffect } from 'react';
 
 export default function RefundPolicyPage() {
@@ -221,7 +221,7 @@ export default function RefundPolicyPage() {
       </section>
 
       <Footer />
-      <StickyCTA />
+     
     </div>
   );
 }

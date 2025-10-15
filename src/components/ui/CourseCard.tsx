@@ -28,10 +28,10 @@ export default function CourseCard({
   onBrochureClick,
 }: CourseCardProps) {
   return (
-    <div className="bg-white rounded-2xl shadow-xl overflow-hidden max-w-md mx-auto flex flex-col h-full transform hover:scale-[1.02] transition-transform duration-200">
-      
+    <div className="w-full bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col h-full transform hover:scale-[1.02] transition-transform duration-200">
+
       {/* Header Image */}
-      <div className="bg-purple-500 flex items-center justify-center h-36 overflow-hidden">
+      <div className="h-36 overflow-hidden bg-purple-500 flex items-center justify-center">
         <img src={image} alt={`${title} Icon`} className="w-full h-full object-cover" />
       </div>
 

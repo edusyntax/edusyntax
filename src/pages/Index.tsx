@@ -102,8 +102,9 @@ export default function HomePage() {
       </section>
 
       {/* Courses Section */}
-     <section className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 bg-white">
+<section className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 bg-white">
   <div className="max-w-6xl mx-auto">
+
     {/* Badge */}
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -120,7 +121,7 @@ export default function HomePage() {
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      className="text-center mb-12 sm:mb-14"
+      className="text-center mb-8 sm:mb-8"
     >
       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-poppins font-bold text-gray-900 leading-snug">
         Upskill for the AI-Powered World with Our Programs
@@ -128,20 +129,19 @@ export default function HomePage() {
     </motion.div>
 
     {/* Courses Grid */}
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-  {courses.map((course) => (
-    <CourseCard
-      key={course.slug}
-      {...course}
-      onExplore={() => handleProgramClick(course.slug!)}
-      onBrochureClick={() => openModal(course.title, "Brochure", course.brochureUrl)}
-    />
-  ))}
-</div>
-
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      {courses.map((course) => (
+        <CourseCard
+          key={course.slug}
+          {...course}
+          onExplore={() => handleProgramClick(course.slug!)}
+          onBrochureClick={() => openModal(course.title, "Brochure", course.brochureUrl)}
+        />
+      ))}
+    </div>
 
     {/* View All Courses Button */}
-    <motion.div
+    {/* <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       className="flex justify-center mt-12 sm:mt-14"
@@ -150,7 +150,7 @@ export default function HomePage() {
         <span>View All Courses</span>
         <ArrowRight className="w-5 h-5" />
       </Button>
-    </motion.div>
+    </motion.div> */}
   </div>
 </section>
 
@@ -167,12 +167,12 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-1 sm:py-2 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-2 sm:py-2 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="flex justify-center mb-6"
+            className="flex justify-center mb-3"
           >
             <Badge className="bg-gradient-to-r from-primary-orange to-trust-blue text-white text-sm px-6 py-2 shadow-lg inline-flex items-center">
               <Sparkles className="w-4 h-4 mr-2" />
@@ -194,7 +194,7 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-4 sm:py-8 px-4 sm:px-6 lg:px-8">
         <WhyChooseUs
           title="Why Choose Edusyntax?"
           subtitle="We're not just another course platform — we’re your career transformation partner."
@@ -204,7 +204,7 @@ export default function HomePage() {
       </section>
 
       {/* Certification Section */}
-      <section className="py-12 sm:py-16 bg-white/50 backdrop-blur-xl px-4 sm:px-6 lg:px-8">
+      <section className="py-1 sm:py-2 bg-white/50 backdrop-blur-xl px-4 sm:px-6 lg:px-8">
         <CertificationSection />
       </section>
 

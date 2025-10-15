@@ -23,8 +23,16 @@ const trustSnippets = [
 ];
 
 export default function HeroModern() {
-  const [modalOpen, setModalOpen] = useState(false);
   const [trustIndex, setTrustIndex] = useState(0);
+    const [modalOpen, setModalOpen] = useState(false);
+  const [selectedTrack, setSelectedTrack] = useState("");
+  const [leadMode, setLeadMode] = useState<"Demo" | "Brochure">("Demo");
+
+  const openModal = (track: string, mode: "Demo" | "Brochure") => {
+    setSelectedTrack(track);
+    setLeadMode(mode);
+    setModalOpen(true);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -111,11 +119,12 @@ export default function HeroModern() {
             >
               {/* Explore Courses Button */}
               <Button
-                text="Explore Courses"
+                text="Talk to a Counselor"
                 icon={<ArrowRight className="w-5 h-5" />}
                 variant="default"
                 size="2xl"
                 className="w-full sm:w-auto  bg-gradient-to-r from-cyan-500 via-emerald-500 to-orange-400 text-white font-semibold hover:scale-105 transform transition-transform duration-300 shadow-lg"
+               onClick={() => openModal("Fullstack", "Brochure")}
               />
 
               {/* Book Free Demo Button */}
@@ -125,7 +134,7 @@ export default function HeroModern() {
                 variant="outline"
                 size="2xl"
                 className="w-full sm:w-auto border-2  border-orange-400 text-orange-400 font-semibold hover:bg-orange-400 hover:text-white transform hover:scale-105 transition-all duration-300 shadow-md"
-                onClick={() => setModalOpen(true)}
+                 onClick={() => openModal("Fullstack", "Demo")}
               />
             </motion.div>
           </motion.div>
@@ -166,13 +175,13 @@ export default function HeroModern() {
       </div>
 
       {/* Modal */}
-      <DemoBookingModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        trackName="Full Stack Development"
-        mode="Demo"
-        brochureUrl="/brochures/fullstack.pdf"
-      />
+         <DemoBookingModal
+           isOpen={modalOpen}
+           onClose={() => setModalOpen(false)}
+           trackName={selectedTrack}
+           mode={leadMode}
+           brochureUrl="/brochures/fullstack.pdf" // optional, only used if lead type is Brochure
+         />
     </section>
   );
 }
