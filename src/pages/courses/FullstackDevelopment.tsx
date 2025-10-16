@@ -27,7 +27,6 @@ import DemoBookingModal from '@/components/ui/DemoBookingModal';
 import DynamicHeroSection from '@/components/ui/DynamicHeroSection';
 import StickyCTA from '@/components/ui/StickyCTA';
 import { fullstackFaqs } from '@/data/FAQ';
-import AutoOpenDemoModal from '@/components/ui/AutoOpenDemoModal';
 
 import { testimonials } from '@/data/testimonials';
 
@@ -218,7 +217,6 @@ export default function FullstackDevelopmentPage() {
 
       {/* Footer */}
       <Footer />
-      <AutoOpenDemoModal/>
 
       {/* Modal */}
       <DemoBookingModal

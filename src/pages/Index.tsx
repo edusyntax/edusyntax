@@ -215,7 +215,6 @@ export default function HomePage() {
 
       {/* Footer */}
       <Footer />
-      <AutoOpenDemoModal/>
           <DemoBookingModal
                   isOpen={modalOpen}
                   onClose={() => setModalOpen(false)}
