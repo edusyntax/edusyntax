@@ -53,6 +53,32 @@ export const dataScienceProjects: ProjectStep[] = [
 ];
 
 
+export const digitalMarketingProjects: ProjectStep[] = [
+  {
+    id: 1,
+    title: "SEO Audit & Optimization",
+    image: '/images/eccomerce.svg',
+  },
+  {
+    id: 2,
+    title: "Google Ads Campaign Setup",
+    image: '/images/finance.svg',
+  },
+  {
+    id: 3,
+    title: "Social Media Strategy & Analytics",
+    image: '/images/health.svg',
+  },
+  {
+    id: 4,
+    title: "Mini Projects",
+    isMore: true,
+    miniProjectsCount: 12,
+    image: "/images/many.svg",
+  },
+];
+
+
 import { Benefit } from "@/components/ui/Bonuses";
 
 export const myBenefits: Benefit[] = [

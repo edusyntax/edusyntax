@@ -142,3 +142,99 @@ export const courses: CourseCardProps[] = [
   },
 ];
 
+export const digitalMarketingModules = [
+  {
+    id: "dm-module-1",
+    title: "Digital Marketing Fundamentals",
+    description:
+      "Understand the foundations of digital marketing, core concepts, and the digital consumer journey.",
+    duration: "2 Weeks",
+    topics: [
+      "Introduction to Digital Marketing",
+      "Traditional vs Digital Marketing",
+      "Understanding Customer Personas",
+      "Marketing Funnels & Conversions",
+      "Website Strategy & UI/UX Basics",
+      "Digital Marketing Tools Overview",
+    ],
+    downloadLink: "/brochures/dm-module-1.pdf",
+  },
+  {
+    id: "dm-module-2",
+    title: "Search Engine Optimization (SEO)",
+    description:
+      "Learn SEO techniques to improve visibility and ranking of websites on search engines.",
+    duration: "3 Weeks",
+    topics: [
+      "On-page & Off-page SEO",
+      "Keyword Research & Planning",
+      "SEO Tools (Google Search Console, SEMrush, Ahrefs)",
+      "Content Optimization Strategies",
+      "Backlink Building & Analysis",
+      "Local SEO & Google Business Profile",
+    ],
+    downloadLink: "/brochures/dm-module-2.pdf",
+  },
+  {
+    id: "dm-module-3",
+    title: "Search Engine Marketing (Google Ads)",
+    description:
+      "Plan, create, and optimize paid advertising campaigns on Google platforms.",
+    duration: "3 Weeks",
+    topics: [
+      "Google Ads Fundamentals",
+      "Campaign Setup & Structure",
+      "Keyword Targeting & Bidding Strategies",
+      "Ad Copywriting & Extensions",
+      "Conversion Tracking & Analytics",
+      "Display & Video Campaigns",
+    ],
+    downloadLink: "/brochures/dm-module-3.pdf",
+  },
+  {
+    id: "dm-module-4",
+    title: "Social Media Marketing (SMM)",
+    description:
+      "Learn to create brand awareness and generate leads using social media platforms.",
+    duration: "4 Weeks",
+    topics: [
+      "Social Media Strategy & Planning",
+      "Facebook & Instagram Ads",
+      "LinkedIn Marketing for B2B",
+      "Twitter, YouTube & Influencer Marketing",
+      "Content Calendar & Engagement Tactics",
+      "Analytics & Optimization",
+    ],
+    downloadLink: "/brochures/dm-module-4.pdf",
+  },
+  {
+    id: "dm-module-5",
+    title: "Email & Content Marketing",
+    description:
+      "Craft compelling content and email campaigns that convert and build long-term relationships.",
+    duration: "2 Weeks",
+    topics: [
+      "Content Marketing Framework",
+      "Copywriting for Web & Social",
+      "Email Campaign Design & Segmentation",
+      "A/B Testing & Automation",
+      "Lead Nurturing Techniques",
+    ],
+    downloadLink: "/brochures/dm-module-5.pdf",
+  },
+  {
+    id: "dm-module-6",
+    title: "Analytics & Capstone Project",
+    description:
+      "Use analytics tools to measure success and implement real-world digital marketing projects.",
+    duration: "2 Weeks",
+    topics: [
+      "Google Analytics 4 (GA4)",
+      "Tag Manager Basics",
+      "KPI & ROI Analysis",
+      "End-to-End Campaign Execution",
+      "Capstone Project: Real Brand Campaign",
+    ],
+    downloadLink: "/brochures/dm-module-6.pdf",
+  },
+];

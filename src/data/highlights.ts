@@ -35,3 +35,30 @@ export const dataScienceHighlights = [
     image: "/images/profileb.svg",
   },
 ];
+
+export const digitalMarketingHighlights = [
+  {
+    id: 1,
+    title: "Hands-On Live Campaigns",
+    subtitle: "Run real Google & Meta Ads with live budgets",
+    image: "/images/interview.svg",
+  },
+  {
+    id: 2,
+    title: "Industry Expert Mentorship",
+    subtitle: "Guidance from top marketing professionals",
+    image: "/images/softskills.svg",
+  },
+  {
+    id: 3,
+    title: "Global Certifications",
+    subtitle: "Google, Meta & HubSpot recognized certificates",
+    image: "/images/eccomerce.svg",
+  },
+  {
+    id: 4,
+    title: "Career-Focused Curriculum",
+    subtitle: "Tailored for placements and agency jobs",
+    image: "/images/profileb.svg",
+  },
+];
