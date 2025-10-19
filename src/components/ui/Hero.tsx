@@ -58,16 +58,16 @@ export default function HeroModern() {
       </div>
 
       <div className="relative container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* LEFT SECTION */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-6 text-center lg:text-left"
+            className="space-y-4 text-center lg:text-left"
           >
             {/* Trust Badge */}
-            <div className="flex flex-nowrap justify-center sm:justify-start gap-2 sm:gap-3 overflow-x-auto no-scrollbar">
+            <div className="flex flex-nowrap justify-center sm:justify-start gap-2 sm:gap-2 overflow-x-auto no-scrollbar">
               <Badge
                 gradient="orangePink"
                 size="md"

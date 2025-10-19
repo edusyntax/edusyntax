@@ -10,6 +10,7 @@ import NotFound from './pages/NotFound';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import RefundPolicy from './pages/RefundPolicy';
 import Terms from './pages/Terms';
+import SuccessStories from './pages/SuccessStories';
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/courses/fullstack-development" element={<FullstackDevelopment />} />
           <Route path="/courses/data-science" element={<DataScience />} />
           <Route path="/courses/digital-marketing" element={<DigitalMarketing />} />
+            <Route path="/successstories" element={<SuccessStories />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/refund-policy" element={<RefundPolicy />} />
             <Route path="/terms" element={<Terms />} />

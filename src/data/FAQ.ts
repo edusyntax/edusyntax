@@ -213,3 +213,75 @@ export const digitalMarketingFaqs: FAQ[] = [
 ];
 
 
+export const successStoriesFaqs: FAQ[] = [
+  {
+    id: 'ss-faq-1',
+    question: 'How does Edusyntax help students achieve real success?',
+    answer:
+      "Edusyntax focuses on practical learning through hands-on projects, mentorship, and personalized guidance. Our learners gain job-ready skills that help them transition into rewarding tech careers.",
+    category: 'General',
+  },
+  {
+    id: 'ss-faq-2',
+    question: 'What kind of success stories do students usually have?',
+    answer:
+      "Our students have achieved a wide range of goals — from landing their first IT job to switching careers, freelancing, or starting their own startups. Each journey reflects dedication, consistency, and guided mentorship.",
+    category: 'Outcomes',
+  },
+  {
+    id: 'ss-faq-3',
+    question: 'How does the placement process work at Edusyntax?',
+    answer:
+      "The placement process includes resume building, portfolio review, mock interviews, and connecting with hiring partners. Once students complete their projects and training, our placement team supports them until they secure a job offer.",
+    category: 'Placement',
+  },
+  {
+    id: 'ss-faq-4',
+    question: 'What is the average placement timeline after course completion?',
+    answer:
+      "Most students get placed within 3 months after completing their course. The exact timeline depends on the student’s consistency, domain, and interview preparation.",
+    category: 'Placement',
+  },
+  {
+    id: 'ss-faq-5',
+    question: 'Do all students get placed after finishing their program?',
+    answer:
+      "While we maintain a high placement rate, success depends on individual effort and performance. Every learner receives continuous support, mentorship, and interview guidance until they achieve their career goal.",
+    category: 'Placement',
+  },
+  {
+    id: 'ss-faq-6',
+    question: 'Are success stories only from tech backgrounds?',
+    answer:
+      "Not at all! Many of our success stories come from non-technical fields like commerce, arts, and management. With structured training and real-world projects, they successfully transitioned into tech roles.",
+    category: 'Diversity',
+  },
+  {
+    id: 'ss-faq-7',
+    question: 'Are there similar programs like the one featured in these stories?',
+    answer:
+      "Yes, we offer various programs such as Fullstack Development, Data Science, Digital Marketing, and AI-driven technologies — all designed to help students achieve similar career outcomes.",
+    category: 'Programs',
+  },
+  {
+    id: 'ss-faq-8',
+    question: 'What role do mentors play in student success?',
+    answer:
+      "Our mentors guide students throughout their learning journey — from understanding concepts to preparing for interviews. Regular one-on-one sessions ensure every learner gets personalized support.",
+    category: 'Mentorship',
+  },
+  {
+    id: 'ss-faq-9',
+    question: 'How does Edusyntax track student success?',
+    answer:
+      "We track each learner’s progress through projects, assessments, and career milestones. Once students achieve a key goal like a job or certification, their story becomes part of our success journey.",
+    category: 'Growth',
+  },
+  {
+    id: 'ss-faq-10',
+    question: 'How can I become part of the next success story?',
+    answer:
+      "Start by enrolling in a program that matches your goals. Stay consistent, engage with mentors, complete projects, and make use of our placement support — your success story begins there.",
+    category: 'Motivation',
+  },
+];

@@ -39,13 +39,14 @@ const Navbar = () => {
       href: "#",
       dropdown: [
         { name: "Fullstack Development", href: "/courses/fullstack-development" },
-        { name: "Data Science", href: "/courses/data-science" },
+        { name: "Data Science & AI", href: "/courses/data-science" },
         { name: "Digital Marketing", href: "/courses/digital-marketing" },
       ],
     },
     { name: "Success Stories", href: "/successstories" },
-    { name: "Bootcamps", href: "/bootcamps" },
+    { name: "Upcoming Batches", href: "/successstories" },
     { name: "Blogs", href: "/blogs" },
+    { name: "Contact", href: "/bootcamps" },
   ];
 
   return (
