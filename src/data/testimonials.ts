@@ -22,7 +22,7 @@ export const testimonials: Testimonial[] = [
     title: "Sneha Patel",
     avatar: "/avatars/3.jpeg",
     text: "The hands-on projects and real-world experience helped me build confidence. I went from being a fresher to getting multiple job offers.",
-    role: "React Developer @ Honeywell",
+    role: "Data analyst @ Honeywell",
   },
   {
     title:" vishnu  ",
@@ -46,12 +46,12 @@ export const testimonials: Testimonial[] = [
     title: "Rajesh G",
     avatar: "/avatars/7.jpg",
     text: "Best investment in my career. The freelancing guidance helped me earn extra income while job hunting. Now I have the best of both worlds.",
-    role: "java Developer @YOTTA",
+    role: "Data engineer @YOTTA",
   },
   {
     title: "vikas reddy",
     avatar: "/avatars/8.jpeg",
     text: "The web development track was exactly what I needed. I can now build complete digital solutions for clients.",
-    role: "fullstackdeveloper @ Accenture",
+    role: "ML engineer@ Accenture",
   },
 ];
