@@ -44,9 +44,9 @@ const Navbar = () => {
       ],
     },
     { name: "Success Stories", href: "/successstories" },
-    { name: "Upcoming Batches", href: "/successstories" },
+    { name: "Upcoming Batches", href: "/upcomingbatches" },
     { name: "Blogs", href: "/blogs" },
-    { name: "Contact", href: "/bootcamps" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
