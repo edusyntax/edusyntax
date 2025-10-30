@@ -20,7 +20,7 @@ export default function ComingSoonPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-2 px-6 md:px-8 bg-gradient-to-b from-blue-50 via-white to-white text-center flex flex-col items-center justify-center">
+      <section className="pt-24 pb-2 px-6 md:px-8  text-center flex flex-col items-center justify-center">
         <div className="max-w-3xl mx-auto">
           <motion.h4
             initial={{ opacity: 0, y: -10 }}

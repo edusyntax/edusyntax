@@ -60,7 +60,7 @@ export default function UpcomingBatchesPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-2 text-center px-6 md:px-8 bg-gradient-to-b from-blue-50 via-white to-white">
+      <section className="pt-20  text-center px-6 md:px-8 ">
         <div className="max-w-3xl mx-auto">
           <h4 className="text-sm uppercase tracking-widest text-gray-500 mb-3">
             November 2025 Enrollments Now Open
@@ -73,18 +73,25 @@ export default function UpcomingBatchesPage() {
             tech career with hands-on, mentor-led learning.
           </p>
 
-          <Button
-            className="bg-black text-white px-8 py-2 border rounded-full hover:bg-gray-800 transition-all"
-            onClick={() => setModalOpen(true)}
+         <Button
+            className="bg-black  text-white px-16 py-2 border rounded-full hover:bg-gray-800 transition-all"
+
             shine={true}
           >
-            Book Your Seat →
+          <a
+          href="https://whatsapp.com/channel/0029Vb71NORFSAtCgstRBb2E"
+          target="_blank"
+          rel="noopener noreferrer">
+            Join with us →
+          </a>
           </Button>
+      
+         
         </div>
       </section>
 
       {/* Course Cards */}
-      <section className="py-12 px-6 md:px-12 bg-white">
+      <section className="py-10 px-6 md:px-12 bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {courses.map((course, index) => (
             <motion.div
