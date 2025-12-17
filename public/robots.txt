@@ -1,3 +1,35 @@
+# robots.txt for https://www.edusyntax.com
+# Allow search engines and AI crawlers to access public content
+
+# --- AI & LLM Crawlers ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: AmazonBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# --- Default ---
 User-agent: *
 Allow: /
 
